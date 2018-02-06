@@ -1,0 +1,161 @@
+body {
+	background: skyblue;
+}
+body, html {
+	* {	
+			box-sizing:border-box;
+	}
+}
+
+.container {
+	position: absolute;
+	left: 50%;
+	
+  display:flex;
+  justify-content: center;
+	transform: translate(-50%);
+  float:left;
+}
+
+.search-box {	
+	input[type="text"] {
+		border: none;
+		background: none;
+		z-index: 1;
+		width: 25px;
+		height: 25px;
+		transition: all .25s ease-in .25s;
+		color: transparent;
+		font-size: .75rem;
+		line-height:25px;
+		&:hover {
+			cursor: pointer;
+			&:focus {
+				cursor: text;
+			}
+			+ span {
+				background: rgba(255,255,255,0.2);
+			}
+		}
+		&:focus {
+			width: 200px;
+			padding: 0 10px;
+			outline: none;
+			color: black;
+			background:none;
+			color: white;
+			+ span {
+				width: 200px;
+				&::before {
+					width:2px;
+					opacity: 0;
+					transition: all .25s ease-in;
+				}
+			}
+		}
+		+ span {
+			z-index: -1;
+			position: absolute;
+			border: 2px solid white;
+			top: 0;
+			width: 25px;
+			height: 25px;
+			transition: all .25s ease-in .25s;
+			border-radius: 25px;
+			left: 0;
+			&::before {
+				transition: all .25s ease-in .5s;
+				transform-origin: left top;
+				content: '';
+				position: absolute;
+				width: 10px;
+				height: 5px;
+				border-radius: 5px;
+				background: white;
+				transform: rotate(45deg) translate(26px, -2px);
+			}
+		}
+	}
+}
+.searchButton
+{
+  color:white;
+  height:35px;
+  width:80px;
+  padding:9px 0px 10px 20px;
+  border-radius:25px;
+  background-color:lightgreen;
+  animation-name: changeSubmitColorToLightGreen;
+  animation-duration: 1s;
+  margin:-5px 0px 0px 20px;
+  
+}
+.searchButton:hover,#randomSearch:hover
+{
+  background-color:green;
+  animation-name: changeSubmitColorToGreen;
+  animation-duration: 1s;
+  cursor:pointer;
+}
+@keyframes changeSubmitColorToGreen 
+{
+    from
+    {
+      background-color: lightgreen;
+    }
+    to 
+    {
+      background-color: green;
+    }
+}
+@keyframes changeSubmitColorToLightGreen 
+{
+    from
+    {
+      background-color: green;
+    }
+    to 
+    {
+      background-color: lightgreen;
+    }
+}
+#randomSearch
+{
+  color:white;
+  height:35px;
+  width:250px;
+  padding:9px 0px 10px 25px;
+  border-radius:25px;
+  background-color:lightgreen;
+  animation-name: changeSubmitColorToLightGreen;
+  animation-duration: 1s;
+  margin:-5px 0px 0px 20px;
+}
+.OutputPanels
+{
+  float:left; 
+  clear:left;
+  margin-top:20px;
+  width:1000px;
+}
+.iframe
+{
+  margin-left:5px;
+  text-align:center;
+  overflow:hidden;
+}
+a
+{
+  text-decoration:none;
+  color:black;
+  background-color:lightgreen;
+}
+a:hover
+{
+  color:green;
+}
+.col-centered
+{
+  text-align:center;
+  margin-left:25%;
+}
